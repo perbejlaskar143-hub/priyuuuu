@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For Priyuuuu ❤️</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#0b0b16;color:#fff;overflow:hidden;display:flex;justify-content:center;align-items:center;height:100vh}
+.card{max-width:700px;padding:30px;text-align:center;position:relative;z-index:2}
+h1{color:#ff5c8a;font-size:3rem}
+p{font-size:1.2rem;line-height:1.7}
+button{padding:14px 28px;border:none;border-radius:30px;font-size:18px;margin:10px;cursor:pointer}
+#yes{background:#ff4f7b;color:#fff}
+#no{background:#fff;color:#000;position:absolute}
+.heart{position:fixed;top:100%;font-size:24px;animation:up linear forwards}
+@keyframes up{to{transform:translateY(-120vh);opacity:0}}
+#proposal{display:none}
+</style>
+</head>
+<body>
+<div class="card" id="intro">
+<h1>Hi Priyuuuu ❤️</h1>
+<p>There are thousands of words I could say,<br>but none of them can truly express how special you are to me.<br><br>
+Every smile of yours brightens my day, and every moment with you becomes a memory I'll always cherish. 💖</p>
+<button onclick="nextPage()">Click Here ❤️</button>
+</div>
+
+<div class="card" id="proposal">
+<h1>Priyuuuu ❤️</h1>
+<p style="font-size:2rem">Will You Be My Girlfriend? 💍❤️</p>
+<button id="yes" onclick="yes()">Yes ❤️</button>
+<button id="no">No 😜</button>
+</div>
+
+<script>
+function nextPage(){
+document.getElementById('intro').style.display='none';
+document.getElementById('proposal').style.display='block';
+}
+const no=document.getElementById('no');
+function move(){
+no.style.left=Math.random()*(window.innerWidth-120)+'px';
+no.style.top=Math.random()*(window.innerHeight-60)+'px';
+}
+no.addEventListener('mouseover',move);
+no.addEventListener('click',move);
+
+function yes(){
+document.body.innerHTML=`<div class="card">
+<h1>❤️ YAYYY ❤️</h1>
+<h2>You just made me the happiest person alive.</h2>
+<p>Thank you for saying yes, Priyuuuu ❤️<br><br>
+I promise to respect you, support you, make you smile, and stand beside you through every chapter of life.<br><br>
+<b>— Perbej ❤️</b></p></div>`;
+document.body.style.overflow='hidden';
+setInterval(makeHeart,200);
+}
+function makeHeart(){
+let h=document.createElement('div');
+h.className='heart';
+h.textContent='❤️';
+h.style.left=Math.random()*100+'vw';
+h.style.animationDuration=(4+Math.random()*4)+'s';
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),8000);
+}
+setInterval(makeHeart,400);
+</script>
+</body>
+</html>
